@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A JS Project Starter Kit Template. This can be used by any JS projects (web, mobile and desktop) as a starting point.",
   "scripts": {
+    "prestart": "node buildScripts/startMessage.js",
+    "start":"node buildScripts/srcServer.js",
+    "security-check":"nsp check"
   },
   "author": "Praneesh Kumar Yadav",
   "license": "MIT",

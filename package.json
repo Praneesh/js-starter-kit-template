@@ -4,8 +4,11 @@
   "description": "A JS Project Starter Kit Template. This can be used by any JS projects (web, mobile and desktop) as a starting point.",
   "scripts": {
     "prestart": "node buildScripts/startMessage.js",
-    "start":"node buildScripts/srcServer.js",
-    "security-check":"nsp check"
+    "start":"npm-run-all --parallel security-check open:src",
+    "security-check":"nsp check",
+    "open:src":"node buildScripts/srcServer.js",
+    "localtunnel":"lt --port 3000",
+    "share":"npm-run-all --parallel open:src localtunnel"
   },
   "author": "Praneesh Kumar Yadav",
   "license": "MIT",

@@ -5,6 +5,8 @@ import open from 'open';
 import webpack from 'webpack';
 import config from '../webpack.config.dev'
 
+/* eslint-disable no-console */
+
 const port = 3000;  /* const keyword instead of var, const is introduced in ES6 */
 const app = express();
 

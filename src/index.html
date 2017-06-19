@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--
+        The following in <% %> is an EJS (EmbeddedJS) syntax
+        This would only allow us to track errors in our production server as the following webpackPlugin with trackJSToken is defined
+        only in prodcution webpack config (webpack.config.prod.js)
+    -->
+    <% if(htmlWebpackPlugin.options.trackJSToken){ %>
     <!-- BEGIN TRACKJS -->
-        <script type="text/javascript">window._trackJs = { token: 'ebb68eccfc514ab8afe77f5b36c84838' };</script>
+        <script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken%>' };</script>
         <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
     <!-- END TRACKJS -->
+    <% } %>
     <meta charset="UTF-8">
   </head>
   <body>
